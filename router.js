@@ -3,9 +3,9 @@ const router = express.Router();
 
 const conexion = require('./database/db');
 
-router.get('/', (req,res)=>{
-    res.render('index')
-}
+router.get('/', (req, res)=>{
+    res.render('index');
+})
 
 /*
 router.get('/',(req,res)=>{
@@ -13,4 +13,4 @@ router.get('/',(req,res)=>{
 })
 
 */
-module.exports = router
+module.exports = router;
