@@ -11,7 +11,13 @@ router.get("/", (req, res) => {
       res.render("index", { results: results });
     }
   });
-  
 });
+
+
+ // RUTA PARA CREAR REGISTROS
+ router.get('/create', (req, res)=>{
+     res.render('create');
+ })
+
 
 module.exports = router;
