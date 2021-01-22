@@ -1,16 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const conexion = require('./database/db');
+const conexion = require("./database/db");
 
-router.get('/', (req, res)=>{
-    res.render('index');
-})
+router.get("/", (req, res) => {
+  conexion.query("SELECT * FROM users", (error, results) => {
+    if (error) {
+      throw error;
+    } else {
+      res.render("index", { results: results });
+    }
+  });
+  
+});
 
-/*
-router.get('/',(req,res)=>{
-    conexion.query('SELECT * FROM users')
-})
-
-*/
 module.exports = router;
