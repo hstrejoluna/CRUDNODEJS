@@ -23,5 +23,9 @@ const crud = require('./controllers/crud');
 router.post('/save', crud.save)
 
 
+
+// RUTA PARA EDITAR REGISTROS
+router.get('/edit/:id')
+
 module.exports = router;
  
