@@ -21,8 +21,8 @@ router.get("/", (req, res) => {
  })
 
 const crud = require('./controllers/crud');
-router.post('/save', crud.save)
-
+router.post('/save', crud.save);
+router.post('/update', crud.update);
 
 
 // RUTA PARA EDITAR REGISTROS
