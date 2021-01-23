@@ -25,7 +25,16 @@ router.post('/save', crud.save)
 
 
 // RUTA PARA EDITAR REGISTROS
-router.get('/edit/:id')
+router.get('/edit/:id', (req, res)=>{
+  const id = req.param.id;
+  conexion.query('SELECT * FROM users WHERE id=?',[id], (error, results)=>{
+    if(error){
+      throw error;
+    }else{
+      res.render('edit',{user:results[0]});
+    }
+  })
+
+});
 
 module.exports = router;
- 
