@@ -23,5 +23,5 @@ exports.update = (req, res)=>{
         }else{
             res.redirect('/');
         }
-    })
-}
+    });
+};

@@ -27,7 +27,7 @@ router.post('/update', crud.update);
 
 // RUTA PARA EDITAR REGISTROS
 router.get('/edit/:id', (req, res)=>{
-  const id = req.param.id;
+  const id = req.params.id;
   conexion.query('SELECT * FROM users WHERE id=?',[id], (error, results)=>{
     if(error){
       throw error;
