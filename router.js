@@ -25,6 +25,8 @@ router.post('/save', crud.save);
 router.post('/update', crud.update);
 
 
+
+
 // RUTA PARA EDITAR REGISTROS
 router.get('/edit/:id', (req, res)=>{
   const id = req.params.id;
@@ -37,5 +39,19 @@ router.get('/edit/:id', (req, res)=>{
   })
 
 });
+
+
+// RUTA PARA ELIMINAR REGISTROS
+router.get('/delete/:id', (req,res)=>{
+  const id = req.params.id;
+  conexion.query('DELETE FROM users WHERE id = ?', [id], (error, results)=>{
+    if(error){
+      throw error;
+    }else{
+      res.redirect('/');
+    }
+  })
+});
+
 
 module.exports = router;
